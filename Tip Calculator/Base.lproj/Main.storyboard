@@ -19,13 +19,13 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V6j-ex-vaD">
-                                <rect key="frame" x="251" y="353" width="108" height="21"/>
+                                <rect key="frame" x="229" y="353" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CC-Rg-OLW">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7CC-Rg-OLW" userLabel="totalStaticLabel">
                                 <rect key="frame" x="16" y="458" width="52" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
@@ -33,18 +33,18 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2yF-aH-UJp">
-                                <rect key="frame" x="251" y="463" width="108" height="21"/>
+                                <rect key="frame" x="229" y="463" width="130" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="25"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="$0.00" textAlignment="right" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lY-Og-thv">
-                                <rect key="frame" x="16" y="98" width="343" height="171"/>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Total Bill" textAlignment="right" clearsOnBeginEditing="YES" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="8lY-Og-thv">
+                                <rect key="frame" x="16" y="100" width="343" height="178"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" red="1" green="0.70824295977121543" blue="0.6811405349779226" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                 <nil key="textColor"/>
-                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="144"/>
+                                <fontDescription key="fontDescription" type="system" weight="thin" pointSize="90"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="onEdit:" destination="BYZ-38-t0r" eventType="editingChanged" id="sgA-5f-Wrt"/>
@@ -52,6 +52,13 @@
                                     <action selector="onEditingEnd:" destination="BYZ-38-t0r" eventType="editingDidEnd" id="h0m-KS-LEb"/>
                                 </connections>
                             </textField>
+                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.10000000000000001" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jq4-S2-ZTg" userLabel="tipSlider">
+                                <rect key="frame" x="14" y="403" width="347" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="valueChanged" id="cIT-by-Za7"/>
+                                </connections>
+                            </slider>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tip: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Pk9-EP-r1C">
                                 <rect key="frame" x="16" y="348" width="46" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -66,13 +73,41 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <slider opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="0.5" minValue="0.10000000000000001" maxValue="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="Jq4-S2-ZTg" userLabel="tipSlider">
-                                <rect key="frame" x="14" y="403" width="347" height="30"/>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="4cG-KI-lRp">
+                                <rect key="frame" x="16" y="567" width="343" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <connections>
-                                    <action selector="onEdit:" destination="BYZ-38-t0r" eventType="valueChanged" id="cIT-by-Za7"/>
-                                </connections>
-                            </slider>
+                                <segments>
+                                    <segment title="1"/>
+                                    <segment title="2"/>
+                                    <segment title="3"/>
+                                </segments>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Split" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Zh5-Tz-Nry">
+                                <rect key="frame" x="170" y="529" width="49" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="pHe-RK-KtR">
+                                <rect key="frame" x="0.0" y="514" width="375" height="8"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" red="1" green="0.38008604401037971" blue="0.38363429855367193" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cost per person: " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TG9-3i-NIw">
+                                <rect key="frame" x="16" y="617" width="184" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$0.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ws0-kx-NsN">
+                                <rect key="frame" x="229" y="622" width="130" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="25"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="1" green="0.70824295977121543" blue="0.6811405349779226" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
@@ -81,13 +116,16 @@
                             <outletCollection property="gestureRecognizers" destination="azW-kt-7Wr" appends="YES" id="iZm-8b-2qy"/>
                         </connections>
                     </view>
-                    <navigationItem key="navigationItem" title="Tips" id="anb-rc-A6f"/>
+                    <navigationItem key="navigationItem" title="Tips" id="WP6-h7-g56"/>
                     <connections>
                         <outlet property="billField" destination="8lY-Og-thv" id="ntV-e7-99J"/>
-                        <outlet property="percentageLabel" destination="uaF-jj-emU" id="35w-2W-y1b"/>
+                        <outlet property="percentageLabel" destination="uaF-jj-emU" id="gD6-6P-Xgp"/>
+                        <outlet property="splitCost" destination="ws0-kx-NsN" id="XX5-Jn-7Q6"/>
                         <outlet property="tipLabel" destination="V6j-ex-vaD" id="3bN-SH-dVo"/>
                         <outlet property="tipSlider" destination="Jq4-S2-ZTg" id="zDi-63-NyF"/>
+                        <outlet property="tipStaticLabel" destination="Pk9-EP-r1C" id="cQg-3V-Hr6"/>
                         <outlet property="totalLabel" destination="2yF-aH-UJp" id="eTW-i4-EZz"/>
+                        <outlet property="totalStaticLabel" destination="7CC-Rg-OLW" id="WRD-gc-6fZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
